@@ -42,6 +42,7 @@ MtmElectionsResult mtmElectionsAddCitizen(MtmElections mtmElections, const char*
 
 MtmElectionsResult mtmElectionsAddCandidate(MtmElections mtmElections, int candidateId, int cityId);
 
+MtmElectionsResult mtmElectionsSupportCandidate(MtmElections mtmElections, int citizenId, int candidateId, int priority);
 
 
 UniqueOrderedList mtmElectionsPerformElections(MtmElections mtmElections, RankFunc rank, void* auxilaryData, const char* filename);
