@@ -1,4 +1,4 @@
-
+import mtm_elections
 f = open('input.txt', 'r')
 
 citizens = []
@@ -49,6 +49,27 @@ print(supports)
 print(out)
 
 #using mtmelections
-
+me_ptr = mtm_elections.mtmElectionsCreate()
+result = mtm_elections.mtmElectionsAddCity(me_ptr, str(city[0]), int(city[1]))
+for citizen_i in citizens:
+    result = mtm_elections.mtmElectionsAddCitizen(me_ptr,
+                                                  str(citizens[citizen_i][0]),
+                                                  int(citizens[citizen_i][1]),
+                                                  int(citizens[citizen_i][2]),
+                                                  int(citizens[citizen_i][3]),
+                                                  int(citizens[citizen_i][4]))
+for candidate_i in candidates:
+    result = mtm_elections.mtmElectionsAddCandidate(me_ptr,
+                                                    int(candidates[candidate_i][0]),
+                                                    int(candidates[candidate_i][1]))
+for support_i in supports:
+    result = mtm_elections.mtmElectionsSupportCandidate(me_ptr,
+                                                        int(supports[support_i][0]),
+                                                        int(supports[support_i][1]),
+                                                        int(supports[support_i][2]))
+result, mayor_id = mtm_elections.mtmElectionsMayorOfCity(me_ptr,
+                                                         int(out[0]),
+                                                         int(out[1]))
+mtm_elections.mtmElectionsDestroy(me_ptr)
 
 f.close()
