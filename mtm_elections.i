@@ -31,15 +31,16 @@ typedef enum mtmElectionsResult_t{
         MTM_ELECTIONS_FILE_ERROR,
         MTM_ELECTIONS_SUCCESS
 }MtmElectionsResult;
-MtmElections mtmElectionsCreate(MtmElections mtmElections);
-MtmElections mtmElectionsAddCity(MtmElections mtmElections, int citizenId, int* cityId);
-MtmElections mtmElectionsAddCitizen(MtmElections mtmElections, const char* citizenName,
-		int citizenId, int citizenAge, int yearsOfEducation, int cityId);
-MtmElections mtmElectionsAddCandidate(MtmElections mtmElections, int candidateId, int cityId);
-MtmElections mtmElectionsSupportCandidate(MtmElections mtmElections, int citizenId, int candidateId, int priority);
-MtmElections mtmElectionsMayorOfCity(MtmElections mtmElections, const char* cityName, int cityId);
-MtmElections mtmElectionsDestroy(MtmElections mtmElections);
 
+
+MtmElections mtmElectionsCreate();
+void mtmElectionsDestroy(MtmElections mtmElections);
+
+MtmElectionsResult mtmElectionsAddCity(MtmElections mtmElections, const char* cityName, int cityId);
+MtmElectionsResult mtmElectionsAddCitizen(MtmElections mtmElections, const char* citizenName,
+		int citizenId, int citizenAge, int yearsOfEducation, int cityId);
+
+MtmElectionsResult mtmElectionsAddCandidate(MtmElections mtmElections, int candidateId, int cityId);
 
 
 

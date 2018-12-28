@@ -118,12 +118,16 @@ MTM_ELECTIONS_NO_CANDIDATES_IN_CITY = _mtm_elections.MTM_ELECTIONS_NO_CANDIDATES
 MTM_ELECTIONS_FILE_ERROR = _mtm_elections.MTM_ELECTIONS_FILE_ERROR
 MTM_ELECTIONS_SUCCESS = _mtm_elections.MTM_ELECTIONS_SUCCESS
 
-def mtmElectionsCreate(mtmElections):
-    return _mtm_elections.mtmElectionsCreate(mtmElections)
+def mtmElectionsCreate():
+    return _mtm_elections.mtmElectionsCreate()
 mtmElectionsCreate = _mtm_elections.mtmElectionsCreate
 
-def mtmElectionsAddCity(mtmElections, citizenId, cityId):
-    return _mtm_elections.mtmElectionsAddCity(mtmElections, citizenId, cityId)
+def mtmElectionsDestroy(mtmElections):
+    return _mtm_elections.mtmElectionsDestroy(mtmElections)
+mtmElectionsDestroy = _mtm_elections.mtmElectionsDestroy
+
+def mtmElectionsAddCity(mtmElections, cityName, cityId):
+    return _mtm_elections.mtmElectionsAddCity(mtmElections, cityName, cityId)
 mtmElectionsAddCity = _mtm_elections.mtmElectionsAddCity
 
 def mtmElectionsAddCitizen(mtmElections, citizenName, citizenId, citizenAge, yearsOfEducation, cityId):
@@ -134,20 +138,12 @@ def mtmElectionsAddCandidate(mtmElections, candidateId, cityId):
     return _mtm_elections.mtmElectionsAddCandidate(mtmElections, candidateId, cityId)
 mtmElectionsAddCandidate = _mtm_elections.mtmElectionsAddCandidate
 
-def mtmElectionsSupportCandidate(mtmElections, citizenId, candidateId, priority):
-    return _mtm_elections.mtmElectionsSupportCandidate(mtmElections, citizenId, candidateId, priority)
-mtmElectionsSupportCandidate = _mtm_elections.mtmElectionsSupportCandidate
-
-def mtmElectionsDestroy(mtmElections):
-    return _mtm_elections.mtmElectionsDestroy(mtmElections)
-mtmElectionsDestroy = _mtm_elections.mtmElectionsDestroy
-
 def mtmElectionsPerformElections(mtmElections, rank, auxilaryData, filename):
     return _mtm_elections.mtmElectionsPerformElections(mtmElections, rank, auxilaryData, filename)
 mtmElectionsPerformElections = _mtm_elections.mtmElectionsPerformElections
 
-def mtmElectionsMayorOfCity(*args):
-    return _mtm_elections.mtmElectionsMayorOfCity(*args)
+def mtmElectionsMayorOfCity(mtmElections, cityId, filename):
+    return _mtm_elections.mtmElectionsMayorOfCity(mtmElections, cityId, filename)
 mtmElectionsMayorOfCity = _mtm_elections.mtmElectionsMayorOfCity
 # This file is compatible with both classic and new-style classes.
 
