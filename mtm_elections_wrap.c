@@ -3405,6 +3405,55 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_mtmElectionsSupportCandidate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  MtmElections arg1 = (MtmElections) 0 ;
+  int arg2 ;
+  int arg3 ;
+  int arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  MtmElectionsResult result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:mtmElectionsSupportCandidate",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_mtm_elections_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "mtmElectionsSupportCandidate" "', argument " "1"" of type '" "MtmElections""'"); 
+  }
+  arg1 = (MtmElections)(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "mtmElectionsSupportCandidate" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = (int)(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "mtmElectionsSupportCandidate" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = (int)(val3);
+  ecode4 = SWIG_AsVal_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "mtmElectionsSupportCandidate" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = (int)(val4);
+  result = (MtmElectionsResult)mtmElectionsSupportCandidate(arg1,arg2,arg3,arg4);
+  resultobj = SWIG_From_int((int)(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_mtmElectionsPerformElections(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   MtmElections arg1 = (MtmElections) 0 ;
@@ -3514,6 +3563,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"mtmElectionsAddCity", _wrap_mtmElectionsAddCity, METH_VARARGS, NULL},
 	 { (char *)"mtmElectionsAddCitizen", _wrap_mtmElectionsAddCitizen, METH_VARARGS, NULL},
 	 { (char *)"mtmElectionsAddCandidate", _wrap_mtmElectionsAddCandidate, METH_VARARGS, NULL},
+	 { (char *)"mtmElectionsSupportCandidate", _wrap_mtmElectionsSupportCandidate, METH_VARARGS, NULL},
 	 { (char *)"mtmElectionsPerformElections", _wrap_mtmElectionsPerformElections, METH_VARARGS, NULL},
 	 { (char *)"mtmElectionsMayorOfCity", _wrap_mtmElectionsMayorOfCity, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }

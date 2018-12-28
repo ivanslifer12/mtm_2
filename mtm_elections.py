@@ -110,6 +110,10 @@ def mtmElectionsAddCandidate(*args):
   return _mtm_elections.mtmElectionsAddCandidate(*args)
 mtmElectionsAddCandidate = _mtm_elections.mtmElectionsAddCandidate
 
+def mtmElectionsSupportCandidate(*args):
+  return _mtm_elections.mtmElectionsSupportCandidate(*args)
+mtmElectionsSupportCandidate = _mtm_elections.mtmElectionsSupportCandidate
+
 def mtmElectionsPerformElections(*args):
   return _mtm_elections.mtmElectionsPerformElections(*args)
 mtmElectionsPerformElections = _mtm_elections.mtmElectionsPerformElections
