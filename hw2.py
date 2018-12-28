@@ -69,7 +69,7 @@ for support_i, index in enumerate(supports):
                                                         int(supports[support_i][2]))
 result, mayor_id = mtm_elections.mtmElectionsMayorOfCity(me_ptr,
                                                          int(out[0]),
-                                                         int(out[1]))
+                                                         str(out[1]))
 mtm_elections.mtmElectionsDestroy(me_ptr)
 
 f.close()
